@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090513"><meta name="description" content="NEXORA — Enter another universe. Explore, create, share and dream.">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg">
+<link rel="stylesheet" href="styles.css"><title>NEXORA — Enter another universe</title>
+</head>
+<body>
+<div class="app-shell">
+  <header class="topbar"><a class="brand-mini" href="#" data-page="home"><span class="orbit">✧</span> NEXORA</a><button class="avatar" data-page="profile" aria-label="Profil">Z</button></header>
+  <main>
+    <section class="page active" id="home">
+      <div class="hero">
+        <div class="eyebrow">✦ TON UNIVERS COMMENCE ICI</div>
+        <h1>Enter another<br><span>universe.</span></h1>
+        <p>Explore. Create. Share. Dream.</p>
+        <button class="primary" data-page="portals">Explorer les Portals <b>→</b></button>
+      </div>
+      <div class="section-head"><div><small>À DÉCOUVRIR</small><h2>Portals populaires</h2></div><button class="text-btn" data-page="portals">Tout voir →</button></div>
+      <div class="portal-grid" id="home-portals"></div>
+      <div class="feature-card"><div><small>TA CRÉATIVITÉ, SANS FRONTIÈRES</small><h2>Crée ton propre Portal.</h2><p>Imagine un monde. Donne-lui vie.</p><button class="secondary" data-page="create">Commencer à créer</button></div><span class="feature-orb">∞</span></div>
+    </section>
+    <section class="page" id="portals">
+      <div class="page-title"><small>EXPLORE L'INFINI</small><h1>Portals</h1><p>Un monde nouveau à chaque ouverture.</p></div>
+      <label class="search">⌕ <input id="search" placeholder="Rechercher un Portal..." autocomplete="off"></label>
+      <div class="chips" id="filters"><button class="chip selected" data-filter="Tous">Tous</button><button class="chip" data-filter="Fantasy">Fantasy</button><button class="chip" data-filter="Dreamcore">Dreamcore</button><button class="chip" data-filter="Nature">Nature</button><button class="chip" data-filter="Anime">Anime</button><button class="chip" data-filter="Musique">Musique</button></div>
+      <div class="portal-grid" id="all-portals"></div>
+    </section>
+    <section class="page" id="detail">
+      <button class="back" data-page="portals">← Retour aux Portals</button><div id="detail-content"></div>
+    </section>
+    <section class="page" id="create">
+      <div class="page-title"><small>FAIS NAÎTRE TON UNIVERS</small><h1>Créer</h1><p>Chaque grande aventure commence par une idée.</p></div>
+      <form id="create-form" class="create-form">
+        <label>Nom du Portal<input id="portal-name" required maxlength="35" placeholder="Ex. : The Hidden Garden"></label>
+        <label>Catégorie<select id="portal-category"><option>Fantasy</option><option>Dreamcore</option><option>Nature</option><option>Anime</option><option>Musique</option></select></label>
+        <label>Description<textarea id="portal-description" required maxlength="180" placeholder="Décris l'univers que tu imagines..."></textarea></label>
+        <label>Ambiance<select id="portal-mood"><option>Magique</option><option>Mystérieuse</option><option>Apaisante</option><option>Énergique</option></select></label>
+        <button class="primary full" type="submit">Créer mon Portal ✦</button>
+        <p class="hint">Prototype V1 : ton Portal est enregistré sur cet appareil. La publication en ligne viendra avec le serveur.</p>
+      </form>
+    </section>
+    <section class="page" id="library">
+      <div class="page-title"><small>TES UNIVERS PRÉFÉRÉS</small><h1>Bibliothèque</h1><p>Retrouve ce que tu aimes.</p></div>
+      <h2 class="subheading">Mes favoris</h2><div class="portal-grid" id="favorites"></div>
+    </section>
+    <section class="page" id="profile">
+      <div class="profile-hero"><div class="profile-avatar">Z</div><h1>Zac <span class="verified">✓</span></h1><p>@softstastic-vibes</p><div class="stats"><div><b id="created-count">0</b><small>Portals créés</small></div><div><b id="fav-count">0</b><small>Favoris</small></div><div><b>∞</b><small>Possibilités</small></div></div></div>
+      <div class="profile-panel"><h2>Mon espace</h2><button data-page="create">＋ Créer un Portal <span>→</span></button><button data-page="library">♡ Ma bibliothèque <span>→</span></button><button data-page="settings">⚙ Paramètres <span>→</span></button></div>
+      <div class="profile-panel"><h2>NEXORA PLUS</h2><p>Débloque une expérience encore plus immersive.</p><div class="plus-line"><strong>4,99 € / mois</strong><span>Premium</span></div><p class="hint">Offre de démonstration — aucun paiement n'est activé dans cette version.</p></div>
+    </section>
+    <section class="page" id="settings">
+      <button class="back" data-page="profile">← Profil</button><div class="page-title"><small>PERSONNALISE TON EXPÉRIENCE</small><h1>Paramètres</h1></div>
+      <div class="profile-panel"><button id="reset-data">Réinitialiser les données locales <span>↻</span></button><p class="hint">Cela efface uniquement les Portals créés et favoris enregistrés sur cet appareil.</p><p class="hint">NEXORA V1 · Prototype local</p></div>
+    </section>
+  </main>
+  <nav class="bottom-nav">
+    <button class="nav-item active" data-page="home"><span>⌂</span>Accueil</button>
+    <button class="nav-item" data-page="portals"><span>◎</span>Explorer</button>
+    <button class="nav-create" data-page="create">＋</button>
+    <button class="nav-item" data-page="library"><span>♡</span>Favoris</button>
+    <button class="nav-item" data-page="profile"><span>◉</span>Profil</button>
+  </nav>
+  <div id="toast" role="status"></div>
+</div>
+<script src="app.js"></script>
+</body></html>
